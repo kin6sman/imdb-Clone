@@ -10,6 +10,10 @@ body {
 
 }
 
+i {
+  font-size: 16px
+}
+
 /* utility */
 
 /* 1. center */
@@ -19,6 +23,32 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* 2. button */
+
+.btn {
+  height: 40px;
+  width: 100px;
+  margin-right: 20px;
+  background-color: rgb(35, 35, 33);
+  border-radius: 5px;
+}
+
+.profile {
+  border-radius: 80%;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ecfd01;
+}
+
+.profile i {
+  font-size: 16px
+}
+
+
+
+
+/* body */
 
 .nav-container {
   background-color: #121212;
@@ -38,20 +68,16 @@ body {
 }
 
 
-.menu-container-btn {
-  height: 40px;
-  width: 100px;
-  margin-right: 20px;
-}
 
-.menu-container-btn #menu-btn {
+
+.btn .menu-btn {
   height: 100%;
   width: 100%;
   font-weight: 700;
   background: transparent;
   color: #fff;
-  background-color: rgb(35, 35, 33);
-  border-radius: 5px;
+  border: 0;
+  
 }
 
 .search-container-btn, #search-box {
@@ -60,7 +86,16 @@ body {
   width: 500px;
   text-align: start;
   border-radius: 5px;
+  border: 0;
 
+}
+
+.search-btn {
+  height: 40px;
+  border: 0;
+  border-radius: 5px;
+  margin-left: -50px;
+  padding: 0px 20px;
 }
 
 #search-box {
