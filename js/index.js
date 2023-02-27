@@ -17,19 +17,53 @@ function getMovies(url) {
 
 getMovies(API_URL);
 
-const movieBox = document.querySelector('#movie-box');
+const movieBox = document.getElementById('popular-Movie');
+const slideBox = document.querySelector('#movie-box');
+
+
 const showMovies = (data) => {
   data.forEach(item => {
     const box = document.createElement('div');
+    const card = document.createElement('div');
+
     box.setAttribute('class', 'mySlides fade');
-    // box.classList.add('mySlides');
-    // box.classList.add('fade');
+    card.setAttribute('class', 'card');
+
+    card.innerHTML = `
+      <img src="${IMG_PATH + item.poster_path}">
+      <div class="text-container">
+        <h2>${item.title}</h2>
+        <br>
+        <p> Hey rahul iam on</p>
+        <br>
+        
+      </div>
+    `;
+    
     box.innerHTML = ` <img src="${IMG_PATH + item.poster_path}" style="width: 100%">
     <div class="text">${item.vote_average}</div>
     `;
-    movieBox.appendChild(box);
+    slideBox.appendChild(box);
+    movieBox.appendChild(card);
+
   });
 }
+
+
+// movie Box
+
+// const movieBox = document.querySelector('#movie-box');
+// const showMovies = (data) => {
+//   data.forEach(item => {
+//     const box = document.createElement('div');
+//     box.setAttribute('class', 'mySlides fade');
+    
+//     box.innerHTML = ` <img src="${IMG_PATH + item.poster_path}" style="width: 100%">
+//     <div class="text">${item.vote_average}</div>
+//     `;
+//     slideBox.appendChild(box);
+//   });
+// }
 
 
 
