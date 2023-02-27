@@ -240,12 +240,20 @@ img {
   position: absolute;
   right: 0;
 }
+
+
+
 .card {
-    border: 1px solid white;
+    /* border: 1px solid white; */
 
   display: flex;
   margin: 30px 10px 10px 5%;
   position: relative;
+}
+
+.card img{
+  height: 250px;
+  width: 150px;
 }
 .card .text-container {
   margin: 0px 10px;
