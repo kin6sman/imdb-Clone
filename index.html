@@ -1,71 +1,87 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/index.css">
-  
-  <title>Ymbd</title>
-</head>
-<body>
-  <header>
-    <div class="nav-container">
-      <div class="left center">
-        <img src="assets/imdb-logo.png" id="imbd-logo" alt="imbd-logo">
-        <div class="btn center">
-          <button class="menu-btn">
-            <i class="fa-solid fa-house">&nbsp &nbsp</i> Home
-          
-          </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/index.css" />
+
+    <title>Ymbd</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="left center">
+          <img src="assets/imdb-logo.png" id="imbd-logo" alt="imbd-logo" />
+          <div class="btn center">
+            <button class="menu-btn">
+              <i class="fa-solid fa-house">&nbsp &nbsp</i> Home
+            </button>
+          </div>
+          <div class="search-container-btn center">
+            <input type="text" id="search-box" placeholder="Search Movies" />
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
         </div>
-        <div class="search-container-btn center">
-          <input type="text" id="search-box"  placeholder="Search Movies">
-          <button class="search-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+        <div class="right center">
+          <div class="btn center">
+            <!-- <input type="button" id="menu-btn" value="Favorite"> -->
+            <button class="menu-btn">
+              <i class="fas fa-heart">&nbsp &nbsp</i> Favorite
+            </button>
+          </div>
+          <div class="btn center profile">
+            <i class="fas fa-user"></i>
+          </div>
         </div>
       </div>
-      <div class="right center">
-        
-        <div class="btn center">
-          <!-- <input type="button" id="menu-btn" value="Favorite"> -->
-          <button class="menu-btn">
-            <i class="fas fa-heart">&nbsp &nbsp</i> Favorite
-          </button>
+    </header>
 
-        </div>
-        <div class="btn center profile ">
-          <i class="fas fa-user"></i>
+    <main>
+      <!-- image slider -->
+
+      <div class="slideshow-container" id="movie-box">
+        <div class="mySlides fade center">
+          <img src="https://picsum.photos/id/37/800/600" style="width: 100%" />
+          <div class="text">London, Ebgland</div>
         </div>
 
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
-    </div>
-    
-  </header> 
+      <br />
+      <div class="right-container">
+        <h1>Most Popular Movies</h1>
 
-  <main>
-
-    <!-- image slider -->
-
-    <div class="slideshow-container" id="movie-box">
-      <div class="mySlides fade center" >
-        
-        <img src="https://picsum.photos/id/37/800/600" style="width:100%">
-        <div class="text ">London, Ebgland</div>
+        <div class="card">
+          <img src="https://picsum.photos/id/437/150/250" alt="" />
+          <div class="text-container">
+            <h2>Heading</h2>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Perferendis aperiam, alias ipsa consequuntur qui dignissimos,
+              nulla beatae dolore cumque asperiores animi explicabo! Dolor rem
+              rerum assumenda accusantium dignissimos veritatis, blanditiis
+              repudiandae, aut ali, placeat quae sed unde nisi.
+            </p>
+            <br />
+            <h3>Rating:</h3>
+            <br />
+            <div class="card-btn">
+              <button class="btn">Learn More</button>
+              <button class="btn">Mark favorite</button>
+            </div>
+          </div>
+        </div>
       </div>
-     
-      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-    <br>
-    <div class="right">
-      
-    </div>
+    </main>
 
-  </main>
-
-
-  <script src="https://kit.fontawesome.com/124c650f91.js" crossorigin="anonymous"></script>
-  <script src="js/index.js"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/124c650f91.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>
