@@ -12,12 +12,8 @@ function getMovies(url) {
       showMovies(data.results);
     })
   }
-// const getMovies = (api) => {
-//   const response =  fetch(api);
-//   const data =  response.json();
-//   console.log(data);
-//   showMovies(data.results);
-// }
+
+  
 
 getMovies(API_URL);
 
@@ -25,27 +21,15 @@ const movieBox = document.querySelector('#movie-box');
 const showMovies = (data) => {
   data.forEach(item => {
     const box = document.createElement('div');
-    box.classList.add('mySlides');
-    box.classList.add('fade');
-    box.innerHTML = ` <img src="${IMG_PATH + item.poster_path}" style="width:100%">
-    <div class="text">London, Ebgland</div>
+    box.setAttribute('class', 'mySlides fade');
+    // box.classList.add('mySlides');
+    // box.classList.add('fade');
+    box.innerHTML = ` <img src="${IMG_PATH + item.poster_path}" style="width: 100%">
+    <div class="text">${item.vote_average}</div>
     `;
     movieBox.appendChild(box);
   });
 }
-
-// function getMovies(url) {
-//   fetch(url).then(res => res.json()).then(data => {
-//     showMovies(data.results);
-//   })
-// }
-
-// function showMovies(data) {
-//   data.forEach(movie => {
-//     const movieEl = document.createElement('div');
-//     movieEl.classList.add('movie');
-//   });
-// }
 
 
 
@@ -55,7 +39,7 @@ const showMovies = (data) => {
 
 //slidebox
 
-let slideIndex = 0;
+let slideIndex = 1;
 let timeoutId = null;
 const slides = document.getElementsByClassName("mySlides");
 // const dots = document.getElementsByClassName("dot");
