@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style/index.css" />
-    <link rel="stylesheet" href="style/movie.css">
+    <link rel="stylesheet" href="style/movie.css" />
 
     <title>Ymbd</title>
   </head>
@@ -12,34 +12,30 @@
     <header>
       <div class="nav-container">
         <div class="left center">
-          <div class = "logo">
-            <div class = "container">
-                <p>IM<span>Db</span></p>
+          <div class="logo">
+            <div class="container">
+              <p>IM<span>Db</span></p>
             </div>
-        </div>
-          <!-- <img src="assets/imdb-logo.png" id="imbd-logo" alt="imbd-logo" /> -->
+          </div>
+
           <div class="btn center">
             <button class="menu-btn">
               <i class="fa-solid fa-house">&nbsp &nbsp</i> Home
             </button>
           </div>
           <div class="search-container-btn center">
-            <!-- <input type="text" id="search-box" placeholder="Search Movies" /> -->
-            <input type = "text" class = "form-control" placeholder="Search Movie Title ..." id = "movie-search-box" onkeyup="findMovies()" onclick = "findMovies()">
-            
-  
-                  <div class = "search-list" id = "search-list">
-                      <!-- list here -->
-                      <!-- <div class = "search-list-item">
-                          <div class = "search-item-thumbnail">
-                              <img src = "medium-cover.jpg">
-                          </div>
-                          <div class = "search-item-info">
-                              <h3>Guardians of the Galaxy Vol. 2</h3>
-                              <p>2017</p>
-                          </div>
-                      </div> -->
-                  </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search Movie Title ..."
+              id="movie-search-box"
+              onkeyup="findMovies()"
+              onclick="findMovies()"
+            />
+
+            <div class="search-list" id="search-list">
+              <!-- list here -->
+            </div>
             <button class="search-btn">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -73,15 +69,12 @@
       </div>
       <br />
 
-
-
-
       <div class="right-container" id="popular-Movie">
         <h1>Most Popular Movies</h1>
 
         <div class="card">
           <img src="https://picsum.photos/id/437/150/250" alt="" />
-          
+
           <div class="text-container">
             <h2>Heading</h2>
             <br />
@@ -103,38 +96,16 @@
         </div>
       </div>
 
-
       <div id="overlay" onclick="off()">
-        <div class = "container">
-          <div class = "result-container">
-              <div class = "result-grid" id = "result-grid">
-                  <!-- movie information here -->
-                  <!-- <div class = "movie-poster">
-                      <img src = "medium-cover.jpg" alt = "movie poster">
-                  </div>
-                  <div class = "movie-info">
-                      <h3 class = "movie-title">Guardians of the Galaxy Vol. 2</h3>
-                      <ul class = "movie-misc-info">
-                          <li class = "year">Year: 2017</li>
-                          <li class = "rated">Ratings: PG-13</li>
-                          <li class = "released">Released: 05 May 2017</li>
-                      </ul>
-                      <p class = "genre"><b>Genre:</b> Action, Adventure, Comedy</p>
-                      <p class = "writer"><b>Writer:</b> James Gunn, Don Abnett, Andy Lanning</p>
-                      <p class = "actors"><b>Actors: </b>Chris Pratt, Zoe Saldana, Dave Bautista</p>
-                      <p class = "plot"><b>Plot:</b> The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's ecounter with his father the ambitious celestial being Ego.</p>
-                      <p class = "language"><b>Language:</b> English</p>
-                      <p class = "awards"><b><i class = "fas fa-award"></i></b> Nominated for 1 Oscar</p>
-                  </div> -->
-              </div>
+        <div class="container">
+          <div class="result-container">
+            <div class="result-grid" id="result-grid">
+              <!-- movie information here -->
+            </div>
           </div>
+        </div>
+        <!-- end of result container -->
       </div>
-      <!-- end of result container -->
-      </div>
-
-
-
-
     </main>
 
     <script
