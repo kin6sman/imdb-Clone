@@ -64,13 +64,14 @@ i {
 
 .nav-container {
   background-color: #121212;
-  height: 7%;
+  height: 10%;
   width: 100%;
   display: flex;
   color: white;
   justify-content: space-around;
   align-items: center;
-  margin-top: 2px;
+  
+  /* margin-top: 0.5rem; */
 
 }
 
@@ -80,7 +81,10 @@ i {
   margin-right: 20px;
 }
 
-
+header .btn{
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
 
 
 .btn .menu-btn {
@@ -90,16 +94,20 @@ i {
   background: transparent;
   color: #fff;
   border: 0;
+  /* margin: 2rem 2rem; */
   
 }
 
-.search-container-btn, #search-box {
+.search-container-btn, .form-control {
   /* border: 1px solid #fff; */
   height: 40px;
-  width: 500px;
+  width: 350px;
   text-align: start;
   border-radius: 5px;
-  border: 0;
+  border: 0; 
+  position: relative;
+  outline: 0;
+
 
 }
 
@@ -107,8 +115,10 @@ i {
   height: 40px;
   border: 0;
   border-radius: 5px;
-  margin-left: -50px;
+  margin-left: -5px;
   padding: 0px 20px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
 #search-box {
@@ -260,3 +270,72 @@ img {
   padding: 10px;
 }
 
+
+
+
+/* About Movies section--- page 2 */
+
+
+.border {
+  border: 1px solid white;
+
+}
+
+.body-container {
+  /* border: 1px solid white; */
+  height: 90vh;
+  width: 90vw;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.left-body, .right-body {
+  height: 80%;
+  width: 45%;
+
+}
+
+.left-body img {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#overlay {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.902);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
