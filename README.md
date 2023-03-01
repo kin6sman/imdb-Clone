@@ -6,6 +6,9 @@ The next challenge is to make a favorite page which stores the movies which user
 ![image](https://user-images.githubusercontent.com/88446494/222142924-a8459c8c-791c-4753-89f7-b12981873e73.png)
 
 
+# Tech Stack
+![image](https://user-images.githubusercontent.com/88446494/222160162-d3796482-5461-4643-b568-9e7d9ec3f25a.png)
+
 
 
 # Features
@@ -28,6 +31,14 @@ The next challenge is to make a favorite page which stores the movies which user
 ## My favourite movies Page
 - Display a list of all the favourite movies.
 - Make list persistent (should have the same number of movies before and after closing the browser/refreshing the browser).
+
+
 ![image](https://user-images.githubusercontent.com/88446494/222141779-3a28eac4-b750-4aed-8146-e5d3294fdac8.png)
 
+# API-Reference
+- Omdb API: https://www.omdbapi.com/
+- Tmdb API: https://developers.themoviedb.org/3/getting-started/introduction
 
+# Live Demo
+
+- Site Link:  https://kin6sman.github.io/imbd-Clone/index.html
