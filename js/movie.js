@@ -4,8 +4,18 @@ const movieSearchBox = document.getElementById("movie-search-box");
 const searchList = document.getElementById("search-list");
 const resultGrid = document.getElementById("result-grid");
 
-let favList = [];
-// let tempList = [];
+let favList = JSON.parse(sessionStorage.getItem('id'));
+
+console.log('first line' + favList);
+
+if(sessionStorage.getItem("id")=== null){
+  favList = [];
+};
+
+let tempList = [];
+
+
+
 
 // load movies from API
 async function loadMovies(searchTerm) {
@@ -18,6 +28,10 @@ async function loadMovies(searchTerm) {
 
 
 
+
+window.addEventListener("load", (event) => {
+  reload();
+});
 
 
 
@@ -97,17 +111,27 @@ function displayMovieDetails(details) {
         <p class = "awards"><b><i class = "fas fa-award"></i></b> ${
           details.Awards
         }</p>
-        <button id="fav-btn" >fav</button>
+        <br>
+        <button id="fav-btn" class="btn"><img src="assets/FAV.png"><br>Mark as Favorite</button>
     </div>
     `;
 
+    let string;
+// We are storing movies id for fav list
   const fav_btn = document.getElementById("fav-btn");
   // tempList.push(details);
   fav_btn.addEventListener("click", () => {
+    
     favList.push(details.imdbID);
+      
+    string = JSON.stringify(favList);
+    sessionStorage.setItem('id', string);
+      reload();
     console.log("favlist: " + favList);
   });
 }
+
+
 
 window.addEventListener("click", (event) => {
   if (event.target.className != "form-control") {
@@ -119,19 +143,43 @@ function off() {
   document.getElementById("overlay").style.display = "none";
 }
 
-
 //load movies to fav section
 
-favList.forEach((id)=> {
-  console.log(id + "helli");
-  sum += id;
-});
 
-document.getElementById("demo").innerHTML = sum;
 
-function reload(){
-  favList.forEach((id)=> {
-    
+function reload() {
+
+  let retString = sessionStorage.getItem('id');
+  let retArray= JSON.parse(retString);
+
+  retArray.forEach(async (id) => {
+    if(!tempList.includes(id)) {
+      console.log(id);
+    const favURL = `https://www.omdbapi.com/?i=${id}&page=1&apikey=bfd6b563`;
+    const favres = await fetch(`${favURL}`);
+    const favdata = await favres.json();
+    console.log(favdata + 'inside reload function');
+    if (favdata.Response == "True") favMovieList(favdata);
+    }
   });
-  
+}
+
+let favBox = document.getElementById("favContainer");
+
+function favMovieList(movies) {
+  let card = document.createElement("div");
+  card.setAttribute("class", "fav-card");
+
+  card.innerHTML = ` 
+  <div class="img-div">
+      <img src="${movies.Poster}" alt="Poster Not Found">
+  </div>
+  <div class="content-div border">
+      <h2> ${movies.Title} </h2>
+  </div>
+      `;
+      favBox.appendChild(card);
+      
+    tempList.push(movies.imdbID);
+
 }

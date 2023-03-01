@@ -55,10 +55,7 @@ const Movies = (data) => {
         </h3>Rating: ${item.vote_average}</h3>
         <br>
         <br>
-        <div class="card-btn">
-              <button class="btn">Learn More</button>
-              <button class="btn">Mark favorite</button>
-        </div>
+        
         
       </div>
     `;
@@ -104,5 +101,5 @@ function showSlides() {
   if (timeoutId) {
     clearTimeout(timeoutId);
   }
-  timeoutId = setTimeout(showSlides, 50000); // Change image every 5 seconds
+  timeoutId = setTimeout(showSlides, 5000); // Change image every 5 seconds
 }

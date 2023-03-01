@@ -1,117 +1,95 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/index.css">
-  <link rel="stylesheet" href="style/movie.css">
-  <title>Document</title>
-</head>
-<body>
-  
-  <header>
-    <div class="nav-container">
-      <div class="left center">
-        <div class = "logo">
-          <div class = "container">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="style/movie.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="nav-container">
+        <div class="left center">
+          <div class="logo">
+            <div class="container">
               <p>IM<span>Db</span></p>
+            </div>
           </div>
-      </div>
-        
-        <div class="btn center">
-          <button class="menu-btn">
-            <i class="fa-solid fa-house">&nbsp &nbsp</i> Home
-          </button>
-        </div>
-        <div class="search-container-btn center">
-         
-          <input type = "text" class = "form-control" placeholder="Search Movie Title ..." id = "movie-search-box" onkeyup="findMovies()" onclick = "findMovies()">
-          
 
-                <div class = "search-list" id = "search-list">
-                    <!-- list here -->
-                    
-                </div>
-          <button class="search-btn">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </button>
+          <div class="btn center">
+            <button
+              class="menu-btn"
+              onclick="window.location.href='index.html' "
+            >
+              <i class="fa-solid fa-house">&nbsp &nbsp</i> Home
+            </button>
+          </div>
+          <div class="search-container-btn center">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search Movie Title ..."
+              id="movie-search-box"
+              onkeyup="findMovies()"
+              onclick="findMovies()"
+            />
+
+            <div class="search-list" id="search-list">
+              <!-- list here -->
+            </div>
+            <button class="search-btn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </div>
+        <div class="right center">
+          <div class="btn center">
+            <!-- <input type="button" id="menu-btn" value="Favorite"> -->
+            <button
+              class="menu-btn"
+              onclick="window.location.href='movie.html' "
+            >
+              <i class="fas fa-heart">&nbsp &nbsp</i> Favorite
+            </button>
+          </div>
+          <div class="btn center profile">
+            <i class="fas fa-user"></i>
+          </div>
         </div>
       </div>
-      <div class="right center">
-        <div class="btn center">
-          <!-- <input type="button" id="menu-btn" value="Favorite"> -->
-          <button class="menu-btn">
-            <i class="fas fa-heart">&nbsp &nbsp</i> Favorite
-          </button>
-        </div>
-        <div class="btn center profile">
-          <i class="fas fa-user"></i>
+    </header>
+
+    <div id="overlay" onclick="off()">
+      <div class="container">
+        <div class="result-container">
+          <div class="result-grid" id="result-grid"></div>
         </div>
       </div>
+      <!-- end of result container -->
     </div>
-  </header>
 
+    <!-- testing fav container -->
 
-
-
-
-
-  <div id="overlay" onclick="off()">
-    <div class = "container">
-      <div class = "result-container">
-          <div class = "result-grid" id = "result-grid">
-              
-          </div>
-      </div>
-  </div>
-  <!-- end of result container -->
-  </div>
-
-
-
-
-<!-- testing fav container -->
-  
-  <div class="fav-main border">
-
-    <div class="fav-card border">
-
+    <div class="fav-main" id="favContainer" onload="reload()">
+      <!-- <div class="fav-card">
         <div class="img-div">
-          <img src="https://picsum.photos/id/367/600/800" alt="">
+          <img src="https://picsum.photos/id/367/600/800" alt="" />
         </div>
-        <div class="content-div border">
-          <h2>Title: Best Movieds dsadasdadasdsdadada dsda sdad </h2>
-        </div>
-        <p id="demo"></p>
-        <button onclick="reload()">reload</button>
+        <div class="content-div">
+          <h2>Title:</h2>
+        </div> -->
+      </div>
     </div>
-    
-   
-    
-  </div>
 
+    <!-- result container -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   <!-- result container -->
-   
-
-  <script
+    <script
       src="https://kit.fontawesome.com/124c650f91.js"
       crossorigin="anonymous"
     ></script>
     <script src="js/movie.js"></script>
-</body>
+  </body>
 </html>
+
+
