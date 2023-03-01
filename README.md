@@ -3,6 +3,9 @@
 The project contains a Movie Page where you can search as many movies as you want, Home Page and a Favorite section. The first part of the project contains a Home page with a slider image function that shows new movie poster which keeps on getting updated in every 5 second and a most popular movie section showing popular or trending movies list with poster + title + rating + details. In the second part we can search any movie by just typing. Search-bar will auto suggest movies based on your typing again with poster and a short description. Third part contains the Movies Page showing details about the Movie which user searched. I have created Movies page with overlay effect and added a favorite button in it.
 The next challenge is to make a favorite page which stores the movies which user select and show them in a different page.
 
+![image](https://user-images.githubusercontent.com/88446494/222142924-a8459c8c-791c-4753-89f7-b12981873e73.png)
+
+
 
 
 # Features
