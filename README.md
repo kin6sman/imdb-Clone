@@ -30,3 +30,4 @@ The next challenge is to make a favorite page which stores the movies which user
 - Make list persistent (should have the same number of movies before and after closing the browser/refreshing the browser).
 ![image](https://user-images.githubusercontent.com/88446494/222141779-3a28eac4-b750-4aed-8146-e5d3294fdac8.png)
 
+
