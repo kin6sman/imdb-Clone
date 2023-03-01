@@ -6,16 +6,14 @@
 }
 
 body {
-    background-color: black;
-    color: #fff;
-    height: 100vh;
-    width: 100vw;
-
-
+  background-color: black;
+  color: #fff;
+  height: 100vh;
+  width: 100vw;
 }
 
 i {
-  font-size: 16px
+  font-size: 16px;
 }
 
 /* utility */
@@ -38,7 +36,6 @@ i {
   border-radius: 5px;
   color: white;
   transition: 0.6s ease;
-
 }
 
 .btn:hover {
@@ -54,11 +51,8 @@ i {
 }
 
 .profile i {
-  font-size: 16px
+  font-size: 16px;
 }
-
-
-
 
 /* body - header */
 
@@ -70,9 +64,8 @@ i {
   color: white;
   justify-content: space-around;
   align-items: center;
-  
-  /* margin-top: 0.5rem; */
 
+  /* margin-top: 0.5rem; */
 }
 
 #imbd-logo {
@@ -81,11 +74,10 @@ i {
   margin-right: 20px;
 }
 
-header .btn{
+header .btn {
   margin-right: 2rem;
   margin-left: 2rem;
 }
-
 
 .btn .menu-btn {
   height: 100%;
@@ -95,20 +87,18 @@ header .btn{
   color: #fff;
   border: 0;
   /* margin: 2rem 2rem; */
-  
 }
 
-.search-container-btn, .form-control {
+.search-container-btn,
+.form-control {
   /* border: 1px solid #fff; */
   height: 40px;
   width: 350px;
   text-align: start;
   border-radius: 5px;
-  border: 0; 
+  border: 0;
   position: relative;
   outline: 0;
-
-
 }
 
 .search-btn {
@@ -126,34 +116,29 @@ header .btn{
   outline: 0;
 }
 
- /* main */
+/* main */
 
-  main {
-    display: flex;
-    justify-content: space-around;
-    position: relative;
-  }
+main {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+}
 
 /* slide image section  */
 
 .mySlides {
   display: none;
-  
 }
 img {
   vertical-align: middle;
 }
 .slideshow-container {
-  
   max-width: 30%;
   /* height: 500px; */
   position: absolute;
   margin: 2% 5% 0;
   left: 0;
 }
-
-
-
 
 /* Next & previous buttons */
 .prev,
@@ -216,18 +201,18 @@ img {
 }
 @-webkit-keyframes fade {
   from {
-    opacity: .4
+    opacity: 0.4;
   }
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 @keyframes fade {
   from {
-    opacity: .4
+    opacity: 0.4;
   }
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 /* On smaller screens, decrease text size */
@@ -235,10 +220,9 @@ img {
   .prev,
   .next,
   .text {
-    font-size: 11px
+    font-size: 11px;
   }
 }
-
 
 /* right side of the window */
 
@@ -251,17 +235,15 @@ img {
   right: 0;
 }
 
-
-
 .card {
-    /* border: 1px solid white; */
+  /* border: 1px solid white; */
 
   display: flex;
   margin: 30px 10px 10px 5%;
   position: relative;
 }
 
-.card img{
+.card img {
   height: 250px;
   width: 150px;
 }
@@ -270,15 +252,10 @@ img {
   padding: 10px;
 }
 
-
-
-
 /* About Movies section--- page 2 */
-
 
 .border {
   border: 1px solid white;
-
 }
 
 .body-container {
@@ -291,30 +268,16 @@ img {
   align-items: center;
 }
 
-.left-body, .right-body {
+.left-body,
+.right-body {
   height: 80%;
   width: 45%;
-
 }
 
 .left-body img {
   height: 100%;
   width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 #overlay {
   position: fixed;
@@ -330,12 +293,12 @@ img {
   cursor: pointer;
 }
 
-#text{
+#text {
   position: absolute;
   top: 50%;
   left: 50%;
   font-size: 50px;
   color: white;
-  transform: translate(-50%,-50%);
-  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }

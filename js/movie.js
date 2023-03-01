@@ -1,23 +1,25 @@
 // Titles: https://www.omdbapi.com/?s=thor&page=1&apikey=bfd6b563
 // details: http://www.omdbapi.com/?i=tt3896198&apikey=bfd6b563
+
+
+// This code retrieves various DOM elements needed to manipulate the search feature
 const movieSearchBox = document.getElementById("movie-search-box");
 const searchList = document.getElementById("search-list");
 const resultGrid = document.getElementById("result-grid");
 
-let favList = JSON.parse(sessionStorage.getItem('id'));
+// This code retrieves the array of movie IDs stored in sessionStorage
+let favList = JSON.parse(sessionStorage.getItem("id"));
 
-console.log('first line' + favList);
 
-if(sessionStorage.getItem("id")=== null){
+// This code initializes an empty array to use if sessionStorage is empty
+if (sessionStorage.getItem("id") === null) {
   favList = [];
-};
+}
 
+// This code initializes an empty array to store temporary data
 let tempList = [];
 
-
-
-
-// load movies from API
+ // This function loads movies from the API based on the searchTerm argumen
 async function loadMovies(searchTerm) {
   const URL = `https://www.omdbapi.com/?s=${searchTerm}&page=1&apikey=bfd6b563`;
   const res = await fetch(`${URL}`);
@@ -26,15 +28,13 @@ async function loadMovies(searchTerm) {
   if (data.Response == "True") displayMovieList(data.Search);
 }
 
-
-
-
+// This code adds an event listener for the window load event, which calls the reload function
 window.addEventListener("load", (event) => {
   reload();
 });
 
 
-
+// This function finds movies based on the search term entered by the user
 function findMovies() {
   let searchTerm = movieSearchBox.value.trim();
   if (searchTerm.length > 0) {
@@ -45,6 +45,8 @@ function findMovies() {
   }
 }
 
+
+// This function displays a list of movies based on the data passed to it
 function displayMovieList(movies) {
   searchList.innerHTML = "";
   for (let idx = 0; idx < movies.length; idx++) {
@@ -68,6 +70,8 @@ function displayMovieList(movies) {
   loadMovieDetails();
 }
 
+
+// This function loads the details of the movie when the user clicks on a movie from the search results
 function loadMovieDetails() {
   const searchListMovies = searchList.querySelectorAll(".search-list-item");
   searchListMovies.forEach((movie) => {
@@ -85,6 +89,7 @@ function loadMovieDetails() {
   });
 }
 
+// This function displays the details of the movie passed to it
 function displayMovieDetails(details) {
   console.log(details);
 
@@ -116,56 +121,73 @@ function displayMovieDetails(details) {
     </div>
     `;
 
-    let string;
-// We are storing movies id for fav list
+
+
+
+
+
+    //This code includes functions related to adding movies to a favorite list and loading them to the favorite section.
+
+  let string;
+
+  // We are storing movies id for fav list
   const fav_btn = document.getElementById("fav-btn");
-  // tempList.push(details);
+  
+  //The fav_btn variable stores the element for the favorite button and adds an event listener to the button that pushes the movie's IMDb ID to the favList array
   fav_btn.addEventListener("click", () => {
-    
     favList.push(details.imdbID);
-      
+
+
+    //converts the favList to a string using JSON.stringify(), and stores it in the sessionStorage
     string = JSON.stringify(favList);
-    sessionStorage.setItem('id', string);
-      reload();
+    sessionStorage.setItem("id", string);
+
+    //The reload() function is called to load the movies to the favorite section
+    reload();
     console.log("favlist: " + favList);
   });
 }
 
 
-
+//The window object also adds an event listener to the click event that hides the search list if the target element's class name is not "form-control".
 window.addEventListener("click", (event) => {
   if (event.target.className != "form-control") {
     searchList.classList.add("hide-search-list");
   }
 });
 
+
+//The off() function hides the overlay on the page.
 function off() {
   document.getElementById("overlay").style.display = "none";
 }
 
+
+
 //load movies to fav section
-
-
-
+//The reload() function retrieves the favList array from sessionStorage, parses it using JSON.parse(), and loops through each ID in the array. If the ID is not already in the tempList array, the function calls the OMDb API to get the movie data, creates a new card element for the movie, and appends it to the favorite section. The favMovieList() function is called to create the card element and add it to the favorite section.
 function reload() {
-
-  let retString = sessionStorage.getItem('id');
-  let retArray= JSON.parse(retString);
+  let retString = sessionStorage.getItem("id");
+  let retArray = JSON.parse(retString);
 
   retArray.forEach(async (id) => {
-    if(!tempList.includes(id)) {
+    if (!tempList.includes(id)) {
       console.log(id);
-    const favURL = `https://www.omdbapi.com/?i=${id}&page=1&apikey=bfd6b563`;
-    const favres = await fetch(`${favURL}`);
-    const favdata = await favres.json();
-    console.log(favdata + 'inside reload function');
-    if (favdata.Response == "True") favMovieList(favdata);
+      const favURL = `https://www.omdbapi.com/?i=${id}&page=1&apikey=bfd6b563`;
+      const favres = await fetch(`${favURL}`);
+      const favdata = await favres.json();
+      console.log(favdata + "inside reload function");
+      if (favdata.Response == "True") favMovieList(favdata);
     }
   });
 }
 
+
+
 let favBox = document.getElementById("favContainer");
 
+
+//The favMovieList() function creates a new div element with the class "fav-card", sets the innerHTML of the element with the movie's image and title, and appends the element to the favorite section. The movie's IMDb ID is added to the tempList array.
 function favMovieList(movies) {
   let card = document.createElement("div");
   card.setAttribute("class", "fav-card");
@@ -178,8 +200,7 @@ function favMovieList(movies) {
       <h2> ${movies.Title} </h2>
   </div>
       `;
-      favBox.appendChild(card);
-      
-    tempList.push(movies.imdbID);
+  favBox.appendChild(card);
 
+  tempList.push(movies.imdbID);
 }

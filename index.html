@@ -9,20 +9,29 @@
     <title>Ymbd</title>
   </head>
   <body>
+    <!-- Navigation Menu and Search Bar Section -->
     <header>
       <div class="nav-container">
         <div class="left center">
+
+          <!-- Logo container -->
           <div class="logo">
             <div class="container">
               <p>IM<span>Db</span></p>
             </div>
           </div>
 
+          <!-- Home Button -->
           <div class="btn center">
-            <button class="menu-btn"  onclick="window.location.href='index.html' ">
+            <button
+              class="menu-btn"
+              onclick="window.location.href='index.html' "
+            >
               <i class="fa-solid fa-house">&nbsp &nbsp</i> Home
             </button>
           </div>
+
+          <!-- Search Bar Container -->
           <div class="search-container-btn center">
             <input
               type="text"
@@ -33,6 +42,7 @@
               onclick="findMovies()"
             />
 
+            <!-- SearchList - Dynamically fetch data from API -->
             <div class="search-list" id="search-list">
               <!-- list here -->
             </div>
@@ -42,12 +52,19 @@
           </div>
         </div>
         <div class="right center">
+
+          <!-- Favorite Button -->
           <div class="btn center">
             <!-- <input type="button" id="menu-btn" value="Favorite"> -->
-            <button class="menu-btn"  onclick="window.location.href='movie.html' ">
+            <button
+              class="menu-btn"
+              onclick="window.location.href='movie.html' "
+            >
               <i class="fas fa-heart">&nbsp &nbsp</i> Favorite
             </button>
           </div>
+
+          <!-- profile -->
           <div class="btn center profile">
             <i class="fas fa-user"></i>
           </div>
@@ -55,9 +72,9 @@
       </div>
     </header>
 
+    <!-- Body section -->
     <main>
       <!-- image slider -->
-
       <div class="slideshow-container" id="movie-box">
         <div class="mySlides fade center">
           <img src="https://picsum.photos/id/203/500/800" style="width: 100%" />
@@ -70,32 +87,14 @@
       <br />
 
       <div class="right-container" id="popular-Movie">
-        <h1>Most Popular Movies </h1>
-
-        <!-- <div class="card">
-          <img src="https://picsum.photos/id/437/150/250" alt="" />
-
-          <div class="text-container">
-            <h2>Heading</h2>
-            <br />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perferendis aperiam, alias ipsa consequuntur qui dignissimos,
-              nulla beatae dolore cumque asperiores animi explicabo! Dolor rem
-              rerum assumenda accusantium dignissimos veritatis, blanditiis
-              repudiandae, aut ali, placeat quae sed unde nisi.
-            </p>
-            <br />
-            <h3>Rating:</h3>
-            <br />
-            <div class="card-btn">
-              <button class="btn">Learn More</button>
-              <button class="btn">Mark favorite</button>
-            </div>
-          </div>
-        </div> -->
+        <h1>Most Popular Movies</h1>
+        
+<!-- fetch data from API for home page section -->
+        
       </div>
 
+
+      <!-- Overlay section  -->
       <div id="overlay" onclick="off()">
         <div class="container">
           <div class="result-container">
